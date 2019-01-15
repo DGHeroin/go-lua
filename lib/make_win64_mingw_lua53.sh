@@ -5,6 +5,6 @@ popd
 mkdir -p release/windows/
 cp build64_mingw/lua.exe release/windows/
 cp build64_mingw/luac.exe release/windows/
-cp build_osx/Release/liblua.dll release/windows/
+cp build64_mingw/liblua.dll release/windows/
 # copy to your working dir
-cp build_osx/Release/liblua.dll ../cmd/lua/
+cp build64_mingw/liblua.dll ../cmd/lua/
