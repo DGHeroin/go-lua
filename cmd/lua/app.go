@@ -1,7 +1,7 @@
 package main
 /*
 #cgo CFLAGS: -Iinclude
-#cgo LDFLAGS: -L./ -llua
+#cgo LDFLAGS: -L./ -llua -lm
 #ifndef __glua_h__
 #define __glua_h__
 extern void NewLuaState(const char* BootCode);
