@@ -1,12 +1,13 @@
 package main
 /*
 #cgo CFLAGS: -Iinclude
-#cgo LDFLAGS: -L./ -llua -lm
+#cgo LDFLAGS: -L../../prebuild -llua -lm
 #ifndef __glua_h__
 #define __glua_h__
-extern void NewLuaState(const char* BootCode);
+extern void NewLuaState(const char* code);
 // example 2
 #include <stdio.h>
+#include <stdlib.h> // C.free
 extern void SetFuncHandler(void*);
 extern void GOexample2();
 static const char* HelloGo(const char* msg) {
@@ -21,17 +22,25 @@ static void InitHandler() {
 #endif
 */
 import "C"
-import "log"
+
+import (
+    "log"
+    "unsafe"
+)
 
 func example1() {
     // example 1, invoke a mod
-    C.NewLuaState(C.CString("print(1234); exp.print()"))
+    code := C.CString("print(1234); exp.print()")
+    C.NewLuaState(code)
+    C.free(unsafe.Pointer(code))
 }
 
 func example2() {
     // example 2, lua size invoke golang function
     C.InitHandler()
-    C.NewLuaState(C.CString("local rs=exp.invoke('hello world');print(rs)"))
+    code := C.CString("local rs=exp.invoke('hello world');print(rs)")
+    C.NewLuaState(code)
+    C.free(unsafe.Pointer(code))
 }
 
 //export GOexample2
@@ -43,4 +52,5 @@ func main()  {
     example1();
     example2();
 }
+
 
