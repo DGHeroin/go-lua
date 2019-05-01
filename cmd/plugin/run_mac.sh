@@ -1,0 +1,1 @@
+cp ../../prebuild/liblua.dylib .

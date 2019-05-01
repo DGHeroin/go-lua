@@ -8,6 +8,6 @@ HTTPPlugin:HTTPPlugin.go
 plugin:LuaPlugin HTTPPlugin
 
 app: app.go
-	go build app.go -o app
+	go build -o app app.go
 clean:
 	rm app *.so
