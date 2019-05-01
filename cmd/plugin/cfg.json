@@ -1,0 +1,12 @@
+[
+  {
+    "path": "./LuaPlugin.so",
+    "func": "NewLuaState",
+    "arg": "print(666)"
+  },
+  {
+    "path": "./HTTPPlugin.so",
+    "func": "NewHTTP",
+    "arg": ":80"
+  }
+]
