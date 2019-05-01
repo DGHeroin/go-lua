@@ -7,4 +7,4 @@ cp build_linux64/lua release/linux/
 cp build_linux64/luac release/linux/
 cp build_linux64/liblua.so release/linux/
 # copy to your working dir
-cp build_linux64/liblua.so ../cmd/lua/
+cp build_linux64/liblua.so ../prebuild
