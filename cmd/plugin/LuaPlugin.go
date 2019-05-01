@@ -1,7 +1,7 @@
 package main
 /*
 #cgo CFLAGS: -Iinclude
-#cgo LDFLAGS: -L../../prebuild -llua
+#cgo LDFLAGS: -L../../prebuild -llua -lm
 #ifndef __glua_h__
 #define __glua_h__
 #include <stdlib.h> // C.free
