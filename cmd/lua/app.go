@@ -43,14 +43,21 @@ func example2() {
     C.free(unsafe.Pointer(code))
 }
 
+func glua() {
+    code := C.CString("print('glua:', glua)")
+    C.NewLuaState(code)
+    C.free(unsafe.Pointer(code))
+}
+
 //export GOexample2
 func GOexample2() {
     log.Println("run in go runtime.")
 }
 
 func main()  {
-    example1();
-    example2();
+    example1()
+    example2()
+    glua()
 }
 
 

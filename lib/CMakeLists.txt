@@ -54,11 +54,13 @@ set ( LUA_LIB lua-5.3.5/src/lauxlib.c lua-5.3.5/src/lbaselib.c lua-5.3.5/src/lbi
   lua-5.3.5/src/lutf8lib.c lua-5.3.5/src/loadlib.c )
 
 set ( LUA_LIBBOOT boot/boot.c boot/libs.c )
-set (LUA_LIBBOOT_MODS "")
+set ( LUA_LIBBOOT_MODS "")
+set ( MOD_GLUA boot/mod/glua.c )
 set ( MOD_EXAMPLE boot/mod/example.c )
 set (
      LUA_LIBBOOT_MODS
      ${LUA_LIBBOOT_MODS}
+     ${MOD_GLUA}
      ${MOD_EXAMPLE}
 )
 

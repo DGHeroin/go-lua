@@ -3,6 +3,7 @@
 
 static const luaL_Reg loadedlibs[] = {
   {LUA_LIBNAME_EXAMPLE, luaopen_example},
+  {LUA_LIBNAME_GLUA, luaopen_glua},
   {NULL, NULL}
 };
 
